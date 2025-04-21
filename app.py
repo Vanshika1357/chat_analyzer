@@ -98,6 +98,12 @@ if uploaded_file is not None:
                 st.dataframe(new_df)
 
         # --- WordCloud ---
+        st.title("Wordcloud")
+        df_wc = helper.create_wordcloud(selected_user, df)
+        fig, ax = plt.subplots()
+        ax.imshow(df_wc)
+        ax.axis("off")
+        st.pyplot(fig)
 
         # --- Most Common Words ---
         st.title("Most Common Words")
